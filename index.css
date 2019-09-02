@@ -1,0 +1,135 @@
+@font-face{
+    font-family: 'FreightBigProMedium';
+    src: url('./fonts/FreightBigPro-Medium.woff');
+    font-weight: 300;
+}
+
+body{
+    margin: 0;
+    animation: fade 2s;
+    background-color: #000;
+    -webkit-overflow-scrolling : touch;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -ms-overflow-style: none; 
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.main{
+    max-width: 40vw;
+    max-height: 75vh;
+    overflow: hidden;
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50% );
+    transition: width 0.4s, opacity 0.4s, max-width 0.4s;
+    transition-delay: 80ms;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+#background{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: -2;
+    background-color: #000;
+}
+
+.title{
+    font-family: FreightBigProMedium, serif;
+    font-size: 6.5em;
+    animation: titleup 2s;
+    color: hsla(0,0%,100%,0.2);
+    padding: 0;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, -100%);
+    transition: transform 0.4s, color 0.1s;
+    background-size: cover;
+}
+
+
+@keyframes titleup{
+    0%{
+        transform: skew(120deg) translate(50%, -30%) scaleY(0.4);
+    }
+    
+    50%{
+        transform: skew(0) translate(50%, -60%);
+    }
+
+    100%{
+        transform: translate(50%, -100%);
+    }
+
+}
+
+.title:before{
+    position: absolute;
+    right: 0;
+    content: attr(data-text);
+    color: #fff;
+    overflow: hidden;
+    height: 0%;
+    transition: 1s;
+    transform: translate(0, 0);
+}
+
+.title:hover:before{
+    height: 100%;
+}
+
+
+.title:hover {
+    /* color: #fff; */
+    cursor: pointer;
+    transform: translate(50%, -100%) scaleY(1.1);
+}
+
+.t1{  top: 46%;  }
+.t2{  top: 75%;  }
+.t3{  top: 104%;  }
+.t4{  top: 133%;  }
+.t5{  top: 162%; }
+.t6{  top: 191%; }
+
+.title:hover + .main{
+    opacity: 1;
+    max-width: 46vw;
+}
+
+.outer{
+    display: table;
+    width: 80%;
+    height: 140vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+.inner{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+::-webkit-scrollbar {
+    display:none;
+} 

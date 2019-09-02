@@ -1,0 +1,83 @@
+#hand{
+    width: 30em;
+    animation: greeting 0.5s infinite;
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translate( -50%, 0);
+}
+#title{
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    font-weight: 700;
+    font-size: 5em;
+    color: white;
+    cursor: pointer;
+    animation: up 1.3s; 
+}
+
+body{
+    background: black;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+a>*{
+    cursor: pointer;
+}
+#curtain{
+    position: fixed;
+    width: 50vw;
+    height: 100vh;
+    /* animation: close 3s;
+    animation-delay: 3s; */
+    right: -50vw;
+    background-color: #000;
+    z-index: 10;
+}
+
+
+@keyframes greeting{
+    0%{
+        transform: rotate(40deg);
+    }
+
+    50%{
+        transform: rotate(-40deg);
+    }
+
+    100%{
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes up{
+    0%{
+        transform: translate( 0, -200px);
+    }
+    100%{
+        transform: translate( 0, 0);
+    }
+}
+
+@keyframes close{
+    0%{
+        right: -50vw;
+        background-color: #0006;
+    }
+
+    100%{
+        right: 0;
+        background-color: #000f;
+    }
+}
+
+#video{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -7;
+    width: 100%;
+}

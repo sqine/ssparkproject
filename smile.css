@@ -1,0 +1,122 @@
+@font-face{
+    font-family: 'Gothic11';
+    src: url('./fonts/a고딕11.ttf');
+    font-weight: 300;
+}
+
+body{
+    margin: 0;
+}
+
+.eye{
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    /* background-color: #FF2C5033; */
+    /* border: 3px solid #FF2C50; */
+    
+    /* transform: translate(-50%, -50%); */
+    overflow: hidden;
+    border-radius: 60px;
+}
+
+#eye1{
+    left: 30vw;
+    top: 30vh;
+}
+
+#eye2{
+    right: 30vw;
+    top: 30vh;
+}
+
+.monster{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 90%;
+    transform: translate( -50%);
+    z-index: -1;
+}
+
+.eye::before{
+    position: absolute;
+    content: '';
+    right: 0;
+    width: 100%;
+    height: 40%;
+    /* transform: translate(3px, -3px); */
+    transition: transform 1s, height 1s;
+    background-color: #FF2C50;
+    border-radius: 60px;
+}
+
+.eye:hover::before{
+
+    height: 100%;
+}
+
+.mouse{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    background-color: #FF2C50;
+    overflow: hidden;
+    width: 60vw;
+    height: 20vw;
+}
+
+.mouse::before {
+    position: absolute;
+    content: 'Thanks for watching';
+    color: white;
+    font-size: 4em;
+    text-align: center;
+    right: 0;
+    bottom: -100%;
+    width: 100%;
+    height:0%;
+    transition: height 1.5s, bottom 1s, padding-top 1.5s;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    background-color: #550000;
+}
+
+.mouse:hover::before{
+    height: 40%;
+    padding-top: 10vh;
+    bottom: 0;
+}
+
+.credit{
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    background-color: #550000;
+    bottom: -150%;
+    color: white;
+    text-align: center;
+    transition: bottom 15s, background-color 2s linear;
+    overflow: auto;
+    transition-delay: 2s;
+    -ms-overflow-style: none; 
+}
+
+.mouse:hover + .credit, .credit:hover{
+    bottom: 0;
+    background-color: #000;
+}
+
+::-webkit-scrollbar {
+    display:none;
+} 
+
+h2{
+    font-weight: 700;
+}
+h2, h3{
+    font-family: 'Gothic11';
+}
